@@ -17,71 +17,77 @@ console.log(`Suma tych dwóch liczb to: ${sum(2, 5)}`);
 
 // Zadanie 2 - 3 punkty
 // Wykonaj funkcje odejmującą, mnożącą oraz dzielącą 2 wartości przekazane w parametrze (3 funkcje).
+// Wynik arytmetyczny powinien wyświetlić się na konsoli Jeżeli któryś z zadanych parametrów nie będzię liczbą, funkcja powinna zwrócić napis: "Niepoprawny parametr". Jeżeli funkcja zostanie uruchomiona tylko z jednym parametrem, powinien zostać on wyświetlony jako wynik działania funkcji.
 
 console.log("ZADANIE 2");
 // SUMA
-
+console.log("suma");
 function sum(a, b) {
-  if (typeof a == "number" && typeof b == "number") {
-    console.log(`${a} & ${b} is a number`);
-    return a + b;
+  if (b == undefined) {
+    console.log(a);
+    // return `Parametr b is undefined`; nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
+  } else if (typeof a != "number" || typeof b != "number") {
+    return `Uncorrect parametr`;
   } else {
-    console.log("a or b is not a number- cannon execute the function ");
-    return 0;
+    console.log(`sum of ${a} and ${b} is: ${a + b}`);
+    // return `both parametrs are numbers and defined- it's possible to execute the function`;  nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
   }
 }
-console.log(sum(6, 2));
+console.log(sum(5, 7));
 
 // RÓŻNICA
+console.log("różnica");
 function diff(a, b) {
-  if (typeof a == "number" && typeof b == "number") {
-    console.log(`${a} & ${b} is a number`);
-    return a - b;
+  if (b == undefined) {
+    console.log(a);
+    // return `Parametr b is undefined`; nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
+  } else if (typeof a != "number" || typeof b != "number") {
+    return `Uncorrect parametr`;
   } else {
-    console.log(`${a} or ${b} is not a number- cannon execute the function`);
-    return 0;
+    console.log(`diff of ${a} and ${b} is: ${a - b}`);
+    // return `both parametrs are numbers and defined- it's possible to execute the function`;  nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
   }
 }
-console.log(diff(5, 2));
+
+console.log(diff(10, 2));
 
 // DZIELENIE
 
-function division(a, b) {
-  if (typeof a == "number" && typeof b == "number" && b != 0) {
-    console.log(
-      `${a} & ${b} is a number and possible operation - divider is greater than zero`
-    );
-    return a / b;
+console.log("dzielenie");
+function div(a, b) {
+  if (b == undefined) {
+    console.log(a);
+    // return `Parametr b is undefined`; nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
+  } else if (typeof a != "number" || typeof b != "number" || b == 0) {
+    return `Uncorrect parametr`;
   } else {
-    console.log(
-      `${a} or ${b} is not a number or divider = 0 -> cannot execute the function`
-    );
+    console.log(`div of ${a} and ${b} is: ${a / b}`);
+    // return `both parametrs are numbers and defined- it's possible to execute the function`;  nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
   }
-  return 0;
 }
 
-console.log(division(10, 0));
+console.log(div(10, 0));
 
 // drugie rozwiązanie- trzy operacje za pomocą jednej funkcji
 console.log("Zadanie2- drugie rozwiązanie");
 function operation(a, b, c) {
-  if (typeof a == "number" && typeof b == "number" && c == "sum") {
-    console.log(`${a} & ${b} is a number`);
-    return a + b;
-  } else if (typeof a == "number" && typeof b == "number" && c == "diff") {
-    console.log(`${a} & ${b} is a number`);
-    return a - b;
-  } else if (typeof a == "number" && typeof b == "number" && c == "div") {
-    console.log(`${a} & ${b} is a number`);
-    return a / b;
+  if (b == undefined) {
+    console.log(a);
+    // return `Parametr b is undefined`; nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
+  } else if (typeof a != "number" || typeof b != "number" || b == 0) {
+    return `Uncorrect parametr`;
+  } else if (c == "sum") {
+    console.log(`sum of ${a} and ${b} is: ${a + b}`);
+  } else if (c == "diff") {
+    console.log(`diff of ${a} and ${b} is: ${a - b}`);
+  } else if (c == "div") {
+    console.log(`div of ${a} and ${b} is: ${a / b}`);
   } else return false;
 }
 
-console.log(`Sum of a and b is: ${operation(2, 3, "sum")}.`);
-console.log(`Difference a and b is: ${operation(5, 1, "diff")}.`);
-console.log(`Division of a and b is:${operation(10, 2, "div")}.`);
-
-// Wynik arytmetyczny powinien wyświetlić się na konsoli Jeżeli któryś z zadanych parametrów nie będzię liczbą, funkcja powinna zwrócić napis: "Niepoprawny parametr". Jeżeli funkcja zostanie uruchomiona tylko z jednym parametrem, powinien zostać on wyświetlony jako wynik działania funkcji.
+console.log(operation(2, 3, "sum"));
+console.log(operation(5, 1, "diff"));
+console.log(operation(10, 2, "div"));
 
 // Zadanie 3 - 3 punkty
 // Stwórz funkcje która przyjmie 3 argument (a,b,c). Na podstawie wprowadzonych danych, wypisz w konsoli komunikat: 'Największa liczba to: liczba'
