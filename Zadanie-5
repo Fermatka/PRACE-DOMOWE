@@ -1,0 +1,136 @@
+// Zadanie domowe - 5
+// Zadanie 1. (2 pkt)
+// Utwórz tablicę obiektów, zawierających 5 studentów.
+// Każdy obiekt powinien zawierać pola (wartości dowolne, wymyślone przez Was):
+
+// id (typ number)
+// imię (typ string),
+// nazwisko (typ string),
+// pesel (typ string),
+// kierunek studiów (typ string)
+// oceny (tablica typów number) - 6 ocen dla każdego ze studentów
+
+const StudentsTab = [
+  {
+    id: 1,
+    imię: "Jan",
+    nazwisko: "Kowalski",
+    pesel: "88032678129",
+    kierunek: "dziennikarstwo",
+    oceny: [1, 2, 3, 3, 4, 4],
+  },
+  {
+    id: 2,
+    imię: "Adam",
+    nazwisko: "Nowak",
+    pesel: "96032678129",
+    kierunek: "biotechnologia",
+    oceny: [6, 6, 5, 5, 5, 4],
+  },
+  {
+    id: 3,
+    imię: "Janina",
+    nazwisko: "Nowak",
+    pesel: "96032678129",
+    kierunek: "chemia",
+    oceny: [2, 2, 2, 2, 2, 3],
+  },
+  {
+    id: 4,
+    imię: "Ludwik",
+    nazwisko: "Bąk",
+    pesel: "89032678129",
+    kierunek: "fizyka",
+    oceny: [4, 5, 6, 4, 5, 4],
+  },
+  {
+    id: 5,
+    imię: "Adrianna",
+    nazwisko: "Wolińska",
+    pesel: "89032678129",
+    kierunek: "matematyka",
+    oceny: [4, 5, 6, 4, 5, 1],
+  },
+];
+// Zadanie 2. (2 pkt)
+// Utwórz funkcję addNewStudent przyjmującą 5 paramaterów (imię, nazwisko, pesel, kierunek studiów, notes). Funkcja po uruchomieniu powinna utworzyć obiekt nowego studenta oraz dodać go do tablicy, utworzonej w Zadaniu 1. Id powinno zostać utworzone randomowo (np. za pomocą Math.random(), max 3 liczby)
+console.log("Zadanie2");
+// czy "wymuszać typ zmiennej"?
+function addNewStudent(
+  imię = "",
+  nazwisko = "",
+  pesel = "",
+  kierunek = "",
+  oceny = []
+) {
+  const min = StudentsTab.length;
+  const max = 999;
+
+  const student = {
+    id: Math.floor(Math.random() * (max - min + 1) + min),
+    imię: imię,
+    nazwisko: nazwisko,
+    pesel: pesel,
+    kierunek: kierunek,
+    oceny: oceny,
+  };
+  StudentsTab.push(student);
+}
+console.log(StudentsTab);
+addNewStudent(
+  "Piotr",
+  "Jasiński",
+  "89102923890",
+  "historia",
+  [1, 2, 4, 5, 4, 6]
+);
+
+console.log(StudentsTab);
+
+// skąd "" przy imieniu?
+// funkcja nie powinna modyfikować świata zewnętrznego
+//  jak napisać własną metodę?
+
+// Zadanie 3. (2 pkt)
+// Utwórz funkcję, przyjmującą jako parametr tablicę obiektów, utworzoną w poprzednich zadaniach. Funkcja powinna wyświetlić w konsoli dane wszystkich studentów w postaci: Student 1: Jan Kowalski, PESEL: 111222333, Field of study: Informatics dla każdego studenta w tablicy.
+
+function showStudentData(st) {
+  for (let i = 0; i < st.length; i++) {
+    console.log(
+      `Student ${st[i].id}: ${st[i].imię} ${st[i].nazwisko}, PESEL: ${st[i].pesel}, Field of study: ${st[i].kierunek}.`
+    );
+  }
+}
+
+showStudentData(StudentsTab);
+
+// Zadanie 4. (4 pkt)
+// Utwórz funkcje getMaxNote oraz getMinNote przyjmującą argumenty: TABLICA_STUDENTÓW, PESEL_STUDENTA, których rolą będzie wyświetlanie w konsoli tekstu (przykładowo): Max note for student Ewa Nowak is 5 / Min note for student Ewa Nowak is 2
+// indexOf znajdź indeks elemenmtu, którego pesel jest przekazany w ps
+const index = arr.findIndex(object => {
+  return object.id === 'b';
+});
+function getNazwisko (ts, ps) {
+  let index = ts.indexOf(pesel ps);
+    
+
+
+}
+
+// Przykład:
+
+//   {
+//     id: 2,
+//     pesel: "234567890",
+//     name: "Ewa",
+//     lastName: "Nowak",
+//     fieldOfStudy: "Architecture",
+//     notes: [2, 3, 3, 3, 2, 5],
+//   }
+
+//   getMaxNote(students, "234567890") // `Max note for student Ewa Nowak is 5`
+//   getMinNote(students, "234567890") //`Min note for student Ewa Nowak is 2`
+// Założenia
+// Funkcje mogą być uruchamiane zarówno w konsoli przeglądarki jak i konsoli NodeJS.
+// Nazwy funkcji, pola obiektów, nazwy zmiennych i stałych powinny być zapisane po angielsku.
+// Termin oddania: 02.02.2023
