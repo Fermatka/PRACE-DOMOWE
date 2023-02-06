@@ -1,126 +1,113 @@
-console.log("test");
+// DOM elements
+const inputBill = document.getElementById("bill-amount");
 
-// Zadanie 1 - 1 punkt
-// Stwórz funkcję 'add', która przyjmuje 2 parametry - 'a' i 'b' oraz zwraca ich sumę. Funkcja powinna sprawdzić, czy oba parametry są typu 'number' (podpowiedź: operator typeof)
-console.log("ZADANIE 1");
+const inputPeople = document.getElementById("people-count");
+const inputCustom = document.querySelector(".custom-percentage");
+const btn_5 = document.querySelector(".btn_5");
+const btn_10 = document.querySelector(".btn_10");
+const btn_15 = document.querySelector(".btn_15");
+const btnReset = document.querySelector(".reset-btn");
+const showTip = document.querySelector(".show-tip");
+const showTotal = document.querySelector(".show-total");
+const showWarning = document.querySelector("label span");
 
-function add(a, b) {
-  if (typeof a == "number" && typeof b == "number") {
-    console.log(`${a} & ${b} is a number`);
-    return a + b;
+// deklaracja zmiennych
+let billAmount, numPeople, customPercent, tipTotal, tipPerson, totalPerson;
+
+//funkcje
+//reset
+
+// obsługa buttonów z %
+//funkcja, która obsłuży kliknięcie batona z %
+let currentPercent = 0.05;
+
+function setCurrentPercent5() {
+  currentPercent = 0.05;
+  visualiseButton(currentPercent);
+}
+
+function setCurrentPercent10() {
+  currentPercent = 0.1;
+  visualiseButton(currentPercent);
+}
+
+function setCurrentPercent15() {
+  currentPercent = 0.15;
+  visualiseButton(currentPercent);
+}
+
+document.querySelector("b5").addEventListener("click", setCurrentPercent5);
+
+document.querySelector("b10").addEventListener("click", setCurrentPercent10);
+
+document.querySelector("b15").addEventListener("click", setCurrentPercent15);
+
+// let currentPercent = 0.05;
+
+function setCurrentPercent5() {}
+
+function visualiseButton(percent) {
+  document.getElementById("b5").style.backgroundColor = "blue";
+
+  document.getElementById("b10").style.backgroundColor = "blue";
+
+  document.getElementById("b15").style.backgroundColor = "blue";
+
+  if (percent === 0.05) {
+    document.getElementById("b5").style.backgroundColor = "#500";
+  } else if (percent === 0.1) {
+    document.getElementById("b10").style.backgroundColor = "#500";
   } else {
-    console.log(`${a} or ${b} is not a number- cannon execute the function`);
-    return 0;
+    document.getElementById("b15").style.backgroundColor = "#500";
   }
 }
-console.log(`Suma tych dwóch liczb to: ${sum(2, 5)}`);
+//żadna- to nic
 
-// Zadanie 2 - 3 punkty
-// Wykonaj funkcje odejmującą, mnożącą oraz dzielącą 2 wartości przekazane w parametrze (3 funkcje).
-// Wynik arytmetyczny powinien wyświetlić się na konsoli Jeżeli któryś z zadanych parametrów nie będzię liczbą, funkcja powinna zwrócić napis: "Niepoprawny parametr". Jeżeli funkcja zostanie uruchomiona tylko z jednym parametrem, powinien zostać on wyświetlony jako wynik działania funkcji.
+visualiseButton(currentPercent);
 
-console.log("ZADANIE 2");
-// SUMA
-console.log("suma");
-function sum(a, b) {
-  if (b == undefined) {
-    console.log(a);
-    // return `Parametr b is undefined`; nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
-  } else if (typeof a != "number" || typeof b != "number") {
-    return `Uncorrect parametr`;
-  } else {
-    console.log(`sum of ${a} and ${b} is: ${a + b}`);
-    // return `both parametrs are numbers and defined- it's possible to execute the function`;  nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
-  }
-}
-console.log(sum(5, 7));
+// function selectedTip () {
 
-// RÓŻNICA
-console.log("różnica");
-function diff(a, b) {
-  if (b == undefined) {
-    console.log(a);
-    // return `Parametr b is undefined`; nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
-  } else if (typeof a != "number" || typeof b != "number") {
-    return `Uncorrect parametr`;
-  } else {
-    console.log(`diff of ${a} and ${b} is: ${a - b}`);
-    // return `both parametrs are numbers and defined- it's possible to execute the function`;  nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
-  }
+//     let tipValue = "0";
+//     if //klinę na 5% to()
+//     ()tipValue =document.querySelector(".btn_5").value;
+
+//     if //klinę na 10% to()
+//     ()tipValue =document.querySelector(".btn_10").value;
+
+//     if //klinę na 15% to()
+//     ()tipValue =document.querySelector(".btn_15").value;
+
+// }
+let tip = "0";
+// reset
+document.getElementById("bill-amount");
+function reset() {
+  document.getElementById("bill-amount").value = "0";
+  document.getElementById("people-count").value = "0";
+  document.querySelector(".show-tip").innerText = "$0.00";
+  document.querySelector(".show-total").innerText = "$0.00";
 }
 
-console.log(diff(10, 2));
+document.querySelector(".reset-btn").addEventListener("click", reset);
 
-// DZIELENIE
+//calculate
+function calculate() {
+  console.log("Hello");
+  let tipPercent = 0.05;
+  let tip = tipPercent * document.getElementById("bill-amount").value;
+  console.log("tip");
 
-console.log("dzielenie");
-function div(a, b) {
-  if (b == undefined) {
-    console.log(a);
-    // return `Parametr b is undefined`; nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
-  } else if (typeof a != "number" || typeof b != "number" || b == 0) {
-    return `Uncorrect parametr`;
-  } else {
-    console.log(`div of ${a} and ${b} is: ${a / b}`);
-    // return `both parametrs are numbers and defined- it's possible to execute the function`;  nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
-  }
+  let tipPerPerson = tip / document.getElementById("people-count").value;
+  console.log(tipPerPerson);
+
+  let BillPerPerson =
+    document.getElementById("bill-amount").value /
+    document.getElementById("people-count").value;
+
+  console.log(BillPerPerson);
+
+  document.querySelector(".show-tip").innerText = "$" + tipPerPerson;
+  document.querySelector(".show-total").innerText = "$" + BillPerPerson;
 }
 
-console.log(div(10, 0));
-
-// drugie rozwiązanie- trzy operacje za pomocą jednej funkcji
-console.log("Zadanie2- drugie rozwiązanie");
-function operation(a, b, c) {
-  if (b == undefined) {
-    console.log(a);
-    // return `Parametr b is undefined`; nie było w treści zadania napisane, ze ma być zwrócony jakiś komunikat, ale moim zdaniem dla jasności wyniku powinien taki komunikat być.
-  } else if (typeof a != "number" || typeof b != "number" || b == 0) {
-    return `Uncorrect parametr`;
-  } else if (c == "sum") {
-    console.log(`sum of ${a} and ${b} is: ${a + b}`);
-  } else if (c == "diff") {
-    console.log(`diff of ${a} and ${b} is: ${a - b}`);
-  } else if (c == "div") {
-    console.log(`div of ${a} and ${b} is: ${a / b}`);
-  } else return false;
-}
-
-console.log(operation(2, 3, "sum"));
-console.log(operation(5, 1, "diff"));
-console.log(operation(10, 2, "div"));
-
-// Zadanie 3 - 3 punkty
-// Stwórz funkcje która przyjmie 3 argument (a,b,c). Na podstawie wprowadzonych danych, wypisz w konsoli komunikat: 'Największa liczba to: liczba'
-console.log("ZADANIE 3");
-function theBiggestNumber(a, b, c) {
-  if (a > b && a > c) {
-    console.log(`${a} is the biggest number`);
-  } else if (b > a && b > c) {
-    console.log(`${b} is the biggest number`);
-  } else {
-    console.log(`${c} is the biggest number`);
-  }
-}
-console.log(theBiggestNumber(9, 2, 3));
-
-// Zadanie 4 - 3 punkty
-// Stwórz funkcje która przyjmie 3 argumenty (age,height, weight). Na podstawie wprowadzonych danych, Oblicz i wyświelt w konsoli BMI dna podanych danych. Nalezy sprawdzić czy nasze wprowadzne dane są liczbami, jeśli jakakolwiek z nich nie jest nalezy wyświetlić komunikat: 'Błędne dane ${dane}'
-
-// BMI obliczamy dzieląc masę ciała (w kilogramach) przez wzrost do kwadratu (w metrach).
-function BMI(age, height, weight) {
-  if (typeof age != "number") {
-    console.log(`Bledne dane (age): ${age}`);
-  } else if (typeof height != "number") {
-    console.log(`Bledne dane (height): ${height}`);
-  } else if (typeof weight != "number") {
-    console.log(`Bledne dane (weight): ${weight}`);
-  } else {
-    return weight / height ** 2;
-  }
-}
-
-console.log(BMI(2, 2, 40));
-// co powinna zwrócić funkcja przy "nagatywnym" rozliczeniu, nie ma return? "błąd"??
-
-// Uwagi
-// Kod piszemy camelCasem i tylko po angielsku
+document.querySelector(".calculate-btn").addEventListener("click", calculate);
