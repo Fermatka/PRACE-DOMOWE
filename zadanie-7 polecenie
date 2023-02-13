@@ -1,0 +1,32 @@
+Zadanie 7 - JS - praca z API
+Treść zadania
+Zadanie 1
+Wykorzystując zewnętrzne api: https://jsonplaceholder.typicode.com/ oraz endpoint: https://jsonplaceholder.typicode.com/users, pobierz listę użytkowników.
+Wyświetl w ramach dokumentu html pobraną listę użytkowników. Dla każdego użytkownika powinieny zostać wyświetlone informacje:
+imię i nazwisko
+adres e-mail
+adres zamieszania (ulica, miasto)
+Zadanie 2
+Utwórz formularz służący do dodawania nowych użytkowników.
+Formularz powinien zawierać pola: Imię i nazwisko, Adres email oraz Adres zamieszkania (mogą być oddzielne pola na ulicę oraz miasto).
+Po wysłaniu formularza, nowy użytkownik powinien wyświetlić się w dokumencie html.
+Użytkownicy dodani przez użytkownika, powinni być wyświetleni na tej samej liście, co użytkownicy pobrani z API.
+Użytkownicy dodanie przez użytkownika powinni wyświetlać się na górze listy.
+Zadanie dodatkowe 1
+Dodaj obsługę local storage dla użytkowników dodanych poprzez formularz.
+Po odświeżeniu strony, użytkownicy dodani za pomocą formularza, powinni również wyświetlać się użytkownikowi.
+Zadanie dodatkowe 2
+Dodaj obsługę statusów ładowania oraz błędu.
+Podczas ładowania danych z zewnętrznego API, użytkownikowi powinien wyświetlić się loader lub tekstowa informacja informująca o ładowaniu danych.
+Jeśli pobieranie danych z zewnętrznego API się nie powiedzie, użytkownik powinien otrzymać komunikat tekstowy.
+W trakcie ładowania danych z zewnętrznego API - formularz dodawania nowych użytkowników powinien być zablokowany lub niewidoczny.
+Założenia
+Nazwy funkcji, pola obiektów, nazwy zmiennych i stałych powinny być zapisane po angielsku.
+Wykorzystaj fetch api przeglądarki.
+Zarówno formularz jak i pobrana lista użytkowników powinna znajdować się w jednym dokumencie html.
+Punktacja
+Łącznie możesz uzyskać 10pkt:
+
+Zadanie 1 - 5pkt
+Zadanie 2 - 5pkt
+Termin oddania 23.02.2023
