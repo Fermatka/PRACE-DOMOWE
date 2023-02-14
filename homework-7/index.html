@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="styles.css" type="stylesheet">
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Imię i nazwisko</th>
+          <th>Adres e-mail</th>
+          <th>Adres zamieszkania</th>
+        </tr>
+      </thead>
+      <tbody id="users-table-body"></tbody>
+    </table>
+<div class="form">
+  <form id = "userForm">
+    <label for=" name">Imię i nazwisko</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="mail">Adres email</label>
+    <input type="text" id="mail" name="mail" required>
+
+    <label for="surname">ulica i numer</label>
+    <input type="text" id="street" name="street" required>
+
+    <label for="surname">kod</label>
+    <input type="text" id="postalcode" name="postalcode" required>
+
+    <label for="surname">miasto</label>
+    <input type="text" id="city" name="city" required>
+    <button type="submit">Wyślij</button>
+  </form>
+</div>
+    
+<script src="script.js"></script>
+    
+</html>
