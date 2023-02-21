@@ -1,0 +1,30 @@
+* {
+  /* background-color: rgb(184, 176, 176); */
+  margin-left: 1.5vh;
+}
+
+.tableDiv {
+  padding: 1.5vh;
+  display: flex;
+}
+table {
+  /* border: 2px solid blue; */
+  align-self: center;
+
+  padding: 1.5vh;
+}
+
+#userForm {
+  padding-top: 4vh;
+  background-color: rgb(222, 213, 213);
+}
+
+/* #name {
+  grid-area: 1 / 1 / 2 / 2;
+} */
+#button {
+  background-color: aqua;
+  border-radius: 15%;
+  padding: 3vh;
+  border-bottom: 3vh;
+}

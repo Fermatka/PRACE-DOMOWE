@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <fieldset>
+      <legend>Lista użytkowników</legend>
+       
+    <div class="tableDiv">
+      <table>
+      <thead>
+        <tr>
+          <th>Imię i nazwisko</th>
+          <th>Adres e-mail</th>
+          <th>Adres zamieszkania</th>
+        </tr>
+      </thead>
+      <tbody id="users-table-body"></tbody>
+    </table></div>
+    </fieldset>
+  
+    
+
+<div class="form">
+  
+  
+  <form id = "userForm">
+    <fieldset>
+      <legend>Dodaj nowego użytkownika</legend>
+
+<label for=" name">Imię i nazwisko</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Adres e-mail</label>
+    <input type="text" id="email" name="email" required>
+<fieldset>
+  <legend>Adres zamieszkania</legend>
+  <label for="street">Ulica</label>
+    <input type="text" id="street" name="street" required>
+
+    <label for="city">Miasto</label>
+    <input type="text" id="city" name="city" required>
+</fieldset>
+    
+
+    </fieldset>
+    
+
+  
+  
+   
+  </form>
+  <button type="button" id="button">DODAJ UŻYTKOWNIKA</button>
+</div>
+    
+<script src="script.js"></script>
+    
+</html>

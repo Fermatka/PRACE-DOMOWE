@@ -1,0 +1,106 @@
+* {
+  /* background-color: rgb(184, 176, 176); */
+  margin-left: 1.5vh;
+}
+
+.users-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+.user-card {
+  border: 1px solid black;
+  padding: 10px;
+}
+.user-card h2 {
+  margin-top: 0;
+}
+.user-card p {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .users-container {
+    grid-template-columns: 1fr;
+  }
+  .user-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* style dla tabletów i mniejszych ekranów */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .users-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* style dla ekranów większych niż 1024px */
+@media only screen and (min-width: 1024px) {
+  .users-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* .tableDiv {
+  padding: 1.5vh;
+}
+
+.tableHeaderRow {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tableSingleHeader {
+  display: flex;
+  justify-content: space-around;
+  color: #4caf50;
+  font-weight: 900;
+}
+
+.tableHeaderRow {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* table {
+  /* border: 2px solid blue; */
+/* align-self: center;
+
+  padding: 1.5vh;
+} */
+
+/* #userForm {
+  padding-top: 4vh;
+  background-color: rgb(222, 213, 213);
+} */
+
+/* #name {
+    grid-area: 1 / 1 / 2 / 2;
+  } */
+
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 3vh;
+}
+
+#button:hover {
+  background-color: #3e8e41;
+}
