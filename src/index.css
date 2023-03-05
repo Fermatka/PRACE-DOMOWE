@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Outfit:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&family=Outfit:wght@400;700&display=swap");
+
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+  --Blue-light: hsl(228, 45%, 44%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--Cream);
+  font-family: "Fraunces", serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: var(--White);
+  display: flex;
+  max-width: 600px;
+  margin: 0 1rem;
+  border-radius: 3%;
+}
+
+.image {
+  width: 50%;
+}
+
+.image img {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 3%;
+  border-bottom-left-radius: 3%;
+}
+
+.details {
+  width: 50%;
+  padding: 2rem;
+}
+
+.category {
+  font-family: "Montserrat";
+  color: var(--Dark-grayish-blue);
+  font-size: 0.6rem;
+  letter-spacing: 3.8px;
+  font-size: smaller;
+  margin-bottom: 1.75rem;
+}
+
+.name {
+  color: var(--Very-dark-blue);
+  font-size: 2rem;
+  line-height: 32px;
+  margin-bottom: 1.75rem;
+  padding-right: 2rem;
+}
+
+.description {
+  font-family: "Montserrat";
+  color: var(--Dark-grayish-blue);
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 1.75rem;
+  padding-right: 0.5rem;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.new-price {
+  color: var(--Dark-cyan);
+  font-size: 30px;
+}
+
+.old-price {
+  color: var(--Dark-grayish-blue);
+  font-family: "Montserrat";
+  text-decoration: line-through;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Dark-cyan);
+  color: var(--White);
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border: 0;
+  border-radius: 10px;
+  font-family: "Montserrat";
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--Very-dark-blue);
+}
+
+@media only screen and (max-width: 550px) {
+  .card {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    flex-direction: column;
+  }
+  .image {
+    width: 100%;
+    height: 40%;
+  }
+
+  .image img {
+    content: url("./assets/images/image-product-mobile.jpg");
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .details {
+    width: 100%;
+  }
+
+  .name {
+    padding-right: 0;
+  }
+}
